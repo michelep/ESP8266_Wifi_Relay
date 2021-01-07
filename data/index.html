@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="WiFi Switch" />
+        <meta name="author" content="Michele <o-zone@zerozone.it> Pinassi" />
+	<title>WiFi Switch - %hostname%</title>
+	<link rel="stylesheet" href="/pure-min.css">
+	<link rel="stylesheet" href="/grids-responsive-min.css">
+	<link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+	<div id="layout" class="pure-g">
+	    <div class="sidebar pure-u-1 pure-u-md-1-4">
+    		<div class="header">
+        	    <h1 class="brand-title">WiFi Switch</h1>
+		    <div>&nbsp;</div>
+        	    <h2 class="brand-tagline"><b>WiFi controlled switch</b>
+			%fw_name% %fw_version%
+		    </h2>
+		</div>
+	    </div>
+        </div>
+	<div class="content pure-u-1 pure-u-md-3-4">
+    	    <div>
+    		<div class="posts">
+            	    <section class="post">
+                	<header class="post-header">
+                    	    <h2 class="post-title">RELAYS STATUS</h2>
+                	</header>
+                	<div class="post-description">
+			    <p>
+				Relay 1 status is <b>%relay_1_status%</b>
+			    </p>
+			    <div class="pure-button-group" role="group" aria-label="Relay 1 status">
+				<button class="pure-button button-error button-xlarge">OPEN</button>
+				<button class="pure-button button-success button-xlarge">CLOSED</button>
+			    </div>
+                	</div>
+            	    </section>
+        	</div>
+    		<div class="posts">
+            	    <section class="post">
+                	<header class="post-header">
+                    	    <h2 class="post-title">BOARD CONFIGURATION</h2>
+                	</header>
+                	<div class="post-description">
+			    <form class="pure-form pure-form-stacked">
+				<fieldset>
+				    <legend>WiFi configuration</legend>
+			    	    <div class="pure-g">
+        			        <div class="pure-u-1 pure-u-md-1-3">
+					    <label for="wifi_essid">SSID</label>
+            				    <input type="text" id="wifi_essid" class="pure-u-23-24" value="%wifi_essid%" required />
+    					</div><div class="pure-u-1 pure-u-md-1-3">
+					    <label for="wifi_password">PSK Key</label>
+        				    <input type="password" id="wifi_password" class="pure-u-23-24" value="%wifi_password%"/>
+			        	</div>
+        				<div class="pure-u-1 pure-u-md-1-3">
+            				    <label>WiFi Signal Power</label>
+					    <p>%wifi_rssi% db</p>
+        				</div>
+        			    </div>
+        			    <div class="puer_g">
+					<div class="pure-u-1 pure-u-md-1-3">
+        				</div>
+    				    </div>
+				</fieldset>
+				<fieldset>
+				    <legend>System configuration</legend>
+			    	    <div class="pure-g">
+        			        <div class="pure-u-1 pure-u-md-1-3">
+					    <label for="hostname">Hostname</label>
+            				    <input type="text" id="hostname" class="pure-u-23-24" value="%hostname%" required />
+    					</div><div class="pure-u-1 pure-u-md-1-3">
+					    <label for="ntp_server">NTP server</label>
+        				    <input type="text" id="ntp_server" class="pure-u-23-24" value="%ntp_server%"/>
+			        	</div><div class="pure-u-1 pure-u-md-1-3">
+					    <label for="ntp_timezone">NTP timezone</label>
+        				    <input type="text" id="ntp_timezone" class="pure-u-23-24" value="%ntp_timezone%"/>
+			        	</div>
+				    </div>
+				</fieldset>
+				<div class="pure-button-group" role="group" aria-label="Configuration">
+			    	    <button type="submit" class="pure-button button-success">SAVE</button>
+			    	    <a href="/config.json" type="button" class="pure-button pure-button-primary">Config export</a>
+			    	    <a href="/restart" type="button" class="pure-button button-warning">! Restart !</a>
+				</div>
+			    </form>
+                	</div>
+            	    </section>
+        	</div>
+        	<div class="footer">
+            	    <div class="pure-menu pure-menu-horizontal">
+                	<ul>
+                    	    <li class="pure-menu-item"><a href="https://www.zerozone.it" class="pure-menu-link">My blog on zerozone.it</a></li>
+                    	    <li class="pure-menu-item"><a href="https://github.com/michelep/" class="pure-menu-link">My code on Github</a></li>
+                    	    <li class="pure-menu-item"><a href="https://twitter.com/michele_pinassi" class="pure-menu-link">Follow me on Twitter</a></li>
+                	</ul>
+            	    </div>
+        	</div>
+    	    </div>
+	</div>
+    </body>
+</html>
