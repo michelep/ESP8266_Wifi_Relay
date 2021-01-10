@@ -97,9 +97,15 @@ void initWebServer() {
     if (request->hasParam("action", true)) {
       action = request->getParam("action", true)->value();
       Serial.print("ACTION: ");
-      if(action.equals("get")) {
+      if(action.equals("relay_1")) {
         value = request->getParam("value", true)->value();
-        Serial.println(value);
+        if(value.equals("open")) { // Open the RELAY
+            digitalWrite(RELAY_PIN, 0);       // Set relay control pin low=open
+            response="Relay OPENED";
+        } else if(value.equals("closed")) { // Close the RELAY
+            digitalWrite(RELAY_PIN, 1);       // Set relay control pin high=close
+            response="Relay CLOSED";
+        }
       }
     }
     request->send(200, "text/plain", response);
